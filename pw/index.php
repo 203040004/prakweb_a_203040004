@@ -56,10 +56,10 @@ $buku = $rows;
         <td>
 
         <center>
-                  <button>
+                  <button style="background-color: gold;">
                     <div class="update"> <a href="ubah.php?id=<?= $row["id"]; ?>" onclick="return confirm('Ubah Data??')" class="btn btn-primary mt-4">Ubah</a></div>
                   </button>
-                  <button>
+                  <button style="background-color: black;">
                     <div class="update"><a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Hapus Data??')" class="btn btn-danger mt-3">Hapus</a></div>
                   </button>
                   <a href="tambah.php">
