@@ -31,10 +31,12 @@ $buku = $rows;
 
 </head>
 
-<body style="background-color: red;">
+<body style="background-color: darkSeaGreen;">
 
   <h1>Daftar Buku harian</h1>
-
+<a href="tambah.php">
+  <button>Tambah</button>
+</a>
   <table border="1" cellpading="10" cellspacing="0">
     <tr>
       <th>#</th>
@@ -50,9 +52,9 @@ $buku = $rows;
         <td><?= $i++; ?></td>
         
         <td><?= $row["nama"]; ?> </td>
-        <td><img src="<?= $row["img"]; ?>" alt="" width="100"></td>
+        <td><img src="<?= $row["gambar"]; ?>" alt="" width="100"></td>
         <td><?= $row["penulis"]; ?></td>
-        <td><?= $row["harga buku"];?></td>
+        <td><?= $row["harga"];?></td>
         <td>
         <center>
                   <a href="ubah.php?id=<?= $row["id"]; ?>" onclick="return confirm('Ubah Data??')" class="btn btn-primary mt-4">Ubah</a>

@@ -1,29 +1,29 @@
 <?php
+session_start();
 
 require 'functions.php';
 
 // jika tidak ada id di url
+if (!isset($_GET['id'])) {
+  header("Location: index.php");
+  exit;
+}
 
-// ambil id dari URl
+// ambil id dari url
 $id = $_GET['id'];
 
 // query buku berdasarkan id
-$buku = query("SELECT * FROM buku where id = $id");
+$m = query("SELECT * FROM buku WHERE id = $id");
 
-// cek apakah tombol sudah ditekan atau belum
-if (isset($_POST["ubah"])) {
-
-
-  // cek apakah data berhasil di tambahkan atau tidak
+// cek apakah tombol ubah sudah ditekan
+if (isset($_POST['ubah'])) {
   if (ubah($_POST) > 0) {
-    echo "
-            <script>
-                alert('data berhasil diubah')
-                document.location.href = 'index.php';
-            </script>
-        ";
+    echo "<script>
+            alert('data berhasil diubahkan!');
+            document.location.href = 'index.php';
+          </script>";
   } else {
-    echo "alert('data gagal diubah';";
+    echo "data gagal diubahkan!";
   }
 }
 
@@ -35,33 +35,47 @@ if (isset($_POST["ubah"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ubah Data Buku</title>
+  <title>Ubah Data buku</title>
 </head>
 
 <body>
-  <h1>Ubah data buku</h1>
-  <form action="" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?= $buku["id"]; ?>">
+  <h3>Form Ubah Data Buku</h3>
+
+  <form method="POST" action="">
+    <input type="hidden" name="id" value="<?= $m['id']; ?>">
     <ul>
       <li>
-        <label for="nama">Nama : </label>
-        <input type="text" name="nama" id="nama" autofocus required value="<?= $buku["nama"]; ?>">
+        <label>
+          Nama :
+          <input type="text" name="nama" autofocus required value="<?= $m['nama']; ?>">
+        </label>
+      </li>
+
+      <li>
+        <label>
+          Gambar :
+          <input type="text" name="gambar" required value="<?= $m['gambar']; ?>">
+        </label>
+      </li>
+
+      <li>
+        <label>
+          Penulis :
+          <input type="text" name="penulis" required value="<?= $m['penulis']; ?>">
+        </label>
+      </li>
+
+      <li>
+        <label>
+          Harga :
+          <input type="text" name="harga" required value="<?= $m['harga']; ?>">
+        </label>
       </li>
       <li>
-        <label for="gambar">Gambar : </label>
-        <input type="file" name="gambar" class="gambar" onchange="previewImage()">
-        <img src="img/<?= $buku["gambar"]; ?>" alt="" width="120" style="display: block;" class="img-preview">
-      </li>
-      <li>
-        <label for="penulis">Penulis : </label>
-        <input type="text" name="penulis" id="penulis" autofocus required value="<?= $buku["penulis"]; ?>">
-      </li>
-      <li>
-        <button type="submit" name="ubah">Ubah Data</button>
+        <button type="submit" name="ubah">Ubah Data!</button>
       </li>
     </ul>
   </form>
-
 </body>
 
-</html>
+</html
