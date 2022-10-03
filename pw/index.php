@@ -34,9 +34,7 @@ $buku = $rows;
 <body style="background-color: darkSeaGreen;">
 
   <h1>Daftar Buku harian</h1>
-<a href="tambah.php">
-  <button>Tambah</button>
-</a>
+
   <table border="1" cellpading="10" cellspacing="0"style="background-color: aqua;">
     <tr>
       <th>#</th>
@@ -56,9 +54,17 @@ $buku = $rows;
         <td><?= $row["penulis"]; ?></td>
         <td><?= $row["harga"];?></td>
         <td>
+
         <center>
-                  <a href="ubah.php?id=<?= $row["id"]; ?>" onclick="return confirm('Ubah Data??')" class="btn btn-primary mt-4">Ubah</a>
-                  <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Hapus Data??')" class="btn btn-danger mt-3">Hapus</a>
+                  <button>
+                    <div class="update"> <a href="ubah.php?id=<?= $row["id"]; ?>" onclick="return confirm('Ubah Data??')" class="btn btn-primary mt-4">Ubah</a></div>
+                  </button>
+                  <button>
+                    <div class="update"><a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Hapus Data??')" class="btn btn-danger mt-3">Hapus</a></div>
+                  </button>
+                  <a href="tambah.php">
+  <button>Tambah</button>
+</a>
                 </center>
         </td>
       </tr>
