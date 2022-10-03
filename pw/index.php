@@ -2,8 +2,7 @@
 // koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "prakweb_a_203040004_pw");
 
-// ambil id dari URl
-$id = $_GET['id'];
+
 
 
 // ambil dari tabel film / query
@@ -29,9 +28,10 @@ $buku = $rows;
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buku</title>
+
 </head>
 
-<body>
+<body style="background-color: red;">
 
   <h1>Daftar Buku harian</h1>
 
