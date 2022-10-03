@@ -37,7 +37,7 @@ $buku = $rows;
 <a href="tambah.php">
   <button>Tambah</button>
 </a>
-  <table border="1" cellpading="10" cellspacing="0">
+  <table border="1" cellpading="10" cellspacing="0"style="background-color: aqua;">
     <tr>
       <th>#</th>
       <th>nama</th>
