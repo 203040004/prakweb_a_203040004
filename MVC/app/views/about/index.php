@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Halaman About</title>
-</head>
-<body>
-    <h1>About me</h1>
-    <p>halo, nama saya <?= $data['nama']; ?>, umur saya <?= $data['umur']; ?> tahun, saya adalah seorang <?= $data['pekerjaan'];  </p>
-</body>
-</html>
+<div class="container">
+  <h1 class="mt4">About ME</h1>
+  <img src="<?= BASEURL; ?>/img/poto.jpg" width="200" class="rounded-circle shadow">
+  <p>Halo nama saya <?= $data['nama']; ?>, saya <?= $data['pekerjaan']; ?>, umur <?= $data['umur']; ?> tahun</p>
+</div>
